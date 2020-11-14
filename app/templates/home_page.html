@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Content -->
+<div class="body">
+  <div class="col-md-8 col-lg-12">
+    <div class="login d-flex align-items-center py-5">
+      <div class="col-md-9 col-lg-8 mx-auto">
+        <h3 class="login-heading mb-4">⍝</h3>
+        <h3 class="login-heading mb-4">upload audio</h3>
+        <form action='/upload' method=post enctype=multipart/form-data>
+          <div id='submit'>
+            <input type=file name=file>
+            <select name='cmaps' class="form-control" id="cmaps">
+              <option value="" selected disabled hidden>choose a style</option>
+              {% for cmap in cmaps %}
+              <option>{{cmap}}</option>
+              {% endfor %}
+            </select>
+            <input type=submit value=Upload>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="sticky-footer" style="background-color: black;">
+  <div class="text-center">
+    <marquee scrollamount=13> ⚘ VIETCETERA ☀︎ The Lab Saigon ▸ AUDIO2SPECTROGRAM ✧
+    </marquee>
+  </div>
+</footer>
+
+
+{% endblock %}
+
+{% block script %}
+<script src="static/js/index.js"></script>
+
+{%endblock%}
